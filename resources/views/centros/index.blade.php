@@ -11,10 +11,10 @@
                 Administra los centros de formación registrados en el sistema.
             </p>
         </div>
-        {{-- <a href="{{ route('training_center.create') }}" 
+        <a href="{{ route('centros.create') }}" 
             class="btn btn-success rounded-pill px-4 shadow-sm fw-semibold">
             <i class="fas fa-plus me-1"></i> Nuevo Centro
-        </a> --}}
+        </a> 
     </div>
     <!-- Tabla -->
     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
@@ -25,7 +25,7 @@
                         <th class="py-3">ID</th>
                         <th class="text-start py-3">Nombre</th>
                         <th class="text-start py-3">Dirección</th>
-                        {{-- <th class="py-3 sticky-actions col-acciones">Acciones</th> --}}
+                        <th class="py-3 sticky-actions col-acciones">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,19 +36,19 @@
                             {{ $trainingcenter['name'] }}
                         </td>
                         <td class="text-secondary text-start">{{ $trainingcenter['location'] }}</td>
-                        {{-- <td class="text-center sticky-actions col-acciones"> 
+                        <td class="text-center sticky-actions col-acciones"> 
                             <div class="d-flex justify-content-center gap-2">
-                                <a href="{{ route('training_center.show', $trainingcenter->id) }}"
+                                <a href="{{ route('centros.show', $trainingcenter['id']) }}"
                                     class="btn btn-sm btn-outline-primary rounded-circle action-btn"
                                     title="Ver detalle">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('training_center.edit', $trainingcenter->id) }}"
+                                <a href="{{ route('centros.edit', $trainingcenter['id']) }}"
                                     class="btn btn-sm btn-outline-warning rounded-circle action-btn"
                                     title="Editar">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <form action="{{ route('training_center.destroy', $trainingcenter->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('centros.destroy', $trainingcenter['id']) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle action-btn"
@@ -58,7 +58,7 @@
                                     </button>
                                 </form>
                             </div>
-                        </td> --}}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

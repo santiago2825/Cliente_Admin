@@ -10,6 +10,12 @@ Route::get('/', function () {
 });
 //centros
 route::get('training_center/list',[TrainingCenterController::class,'index'])->name('centros.index');
+route::get('training_center/create',[TrainingCenterController::class,'create'])->name('centros.create');
+route::get('training_center/{id}',[TrainingCenterController::class,'show'])->name('centros.show');
+route::post('training_center/store',[TrainingCenterController::class,'store'])->name('centros.store');
+route::get('training_center/{id}/edit',[TrainingCenterController::class,'edit'])->name('centros.edit');
+route::put('training_center/{id}',[TrainingCenterController::class,'update'])->name('centros.update');
+route::delete('training_center/{id}',[TrainingCenterController::class,'destroy'])->name('centros.destroy');
 //areas
 route::get('areas/list',[AreaController::class,'index'])->name('areas.index');
 route::get('areas/create',[AreaController::class,'create'])->name('areas.create');
