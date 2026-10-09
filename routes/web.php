@@ -26,3 +26,9 @@ route::put('areas/{id}',[AreaController::class,'update'])->name('areas.update');
 route::delete('areas/{id}',[AreaController::class,'destroy'])->name('areas.destroy');
 //ambientes
 route::get('environment/list',[EnvironmentController::class,'index'])->name('ambientes.index');
+Route::get('environment/create', [EnvironmentController::class, 'create'])->name('ambientes.create');
+Route::post('environment/store', [EnvironmentController::class, 'store'])->name('ambientes.store');
+Route::get('environment/{id}', [EnvironmentController::class, 'show'])->name('ambientes.show');
+Route::get('environment/{id}/edit', [EnvironmentController::class, 'edit'])->name('ambientes.edit'); 
+Route::put('environment/{id}', [EnvironmentController::class, 'update'])->name('ambientes.update');
+Route::delete('environment/{id}', [EnvironmentController::class, 'destroy'])->name('ambientes.destroy'); 

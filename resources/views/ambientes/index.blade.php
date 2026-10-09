@@ -11,10 +11,10 @@
                 Administra los ambientes de formación registrados en el sistema.
             </p>
         </div>
-        {{-- <a href="{{ route('environment.create') }}"
+        <a href="{{ route('ambientes.create') }}"
             class="btn btn-success rounded-pill px-4 shadow-sm fw-semibold">
             <i class="fas fa-plus me-1"></i> Nuevo Ambiente
-        </a> --}}
+        </a>
     </div>
 
     <!-- Tabla -->
@@ -27,7 +27,7 @@
                         <th class="text-start py-3">Nombre</th>
                         <th class="text-start py-3">Ubicación</th>
                         <th class="py-3">Centro de Formación</th>
-                        {{-- <th class="py-3 sticky-actions col-acciones">Acciones</th> --}}
+                        <th class="py-3 sticky-actions col-acciones">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,19 +41,19 @@
                                 {{ $environment['training_center']['name'] ?? 'Sin centro' }}
                             </span>
                         </td>
-                        {{-- <td class="text-center sticky-actions col-acciones"> 
+                        <td class="text-center sticky-actions col-acciones"> 
                             <div class="d-flex justify-content-center gap-2">
-                                <a href="{{ route('environment.show', $environment->id) }}"
+                                <a href="{{ route('ambientes.show', $environment['id']) }}"
                                     class="btn btn-sm btn-outline-primary rounded-circle action-btn"
                                     title="Ver detalle">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('environment.edit', $environment->id) }}"
+                                <a href="{{ route('ambientes.edit', $environment['id']) }}"
                                     class="btn btn-sm btn-outline-warning rounded-circle action-btn"
                                     title="Editar">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <form action="{{ route('environment.destroy', $environment->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('ambientes.destroy', $environment['id']) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle action-btn"
@@ -62,8 +62,8 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
-                            {{-- </div> 
-                        {{-- </td> --}}
+                            </div> 
+                        </td> 
                     </tr>
                     @endforeach
                 </tbody>
