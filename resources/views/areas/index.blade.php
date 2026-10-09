@@ -11,9 +11,9 @@
                     Administra las áreas registradas en el sistema.
                 </p>
             </div>
-            {{-- <a href="{{ route('area.create') }}" class="btn btn-success rounded-pill px-4 shadow-sm fw-semibold"> 
+            <a href="{{ route('areas.create') }}" class="btn btn-success rounded-pill px-4 shadow-sm fw-semibold"> 
                 <i class="fas fa-plus me-1"></i> Nueva Área
-            {{-- </a> --}}
+            </a> 
         </div>
 
         <!-- Tabla -->
@@ -24,7 +24,7 @@
                         <tr>
                             <th class="py-3">ID</th>
                             <th class="text-start py-3">Nombre</th>
-                            {{-- <th class="py-3 sticky-actions col-acciones">Acciones</th> --}}
+                            <th class="py-3 sticky-actions col-acciones">Acciones</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -34,19 +34,19 @@
                                 <td class="fw-semibold text-dark text-start">
                                     {{ $area['name'] }}
                                 </td>
-                                {{-- <td class="text-center sticky-actions col-acciones"> 
+                                <td class="text-center sticky-actions col-acciones"> 
                                     <div class="d-flex justify-content-center gap-2">
-                                        <a href="{{ route('area.show', $area->id) }}"
+                                        <a href="{{ route('areas.show', $area['id']) }}"
                                             class="btn btn-sm btn-outline-primary rounded-circle action-btn"
                                             title="Ver detalle">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="{{ route('area.edit', $area->id) }}"
+                                        <a href="{{ route('areas.edit', $area['id']) }}" 
                                             class="btn btn-sm btn-outline-warning rounded-circle action-btn"
                                             title="Editar">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                        <form action="{{ route('area.destroy', $area->id) }}" method="POST" class="d-inline">
+                                        <form action="{{ route('areas.destroy', $area['id']) }}" method="POST" class="d-inline"> 
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle action-btn"
@@ -54,9 +54,9 @@
                                                 title="Eliminar">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </form>
+                                        </form> 
                                     </div>
-                                </td> --}}
+                                </td> 
                             </tr>
                         @endforeach
                     </tbody>
