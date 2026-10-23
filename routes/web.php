@@ -4,6 +4,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\EnvironmentController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TrainingCenterController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,11 @@ Route::get('offer/{id}', [OfferController::class, 'show'])->name('oferta.show');
 Route::get('offer/{id}/edit', [OfferController::class, 'edit'])->name('oferta.edit'); 
 Route::put('offer/{id}', [OfferController::class, 'update'])->name('oferta.update');
 Route::delete('offer/{id}', [OfferController::class, 'destroy'])->name('oferta.destroy');
+//instructor
+route::get('teacher/list',[TeacherController::class,'index'])->name('profesor.index');
+Route::get('teacher/create', [TeacherController::class, 'create'])->name('profesor.create');
+Route::post('teacher/store', [TeacherController::class, 'store'])->name('profesor.store');
+Route::get('teacher/{id}', [TeacherController::class, 'show'])->name('profesor.show');
+Route::get('teacher/{id}/edit', [TeacherController::class, 'edit'])->name('profesor.edit'); 
+Route::put('teacher/{id}', [TeacherController::class, 'update'])->name('profesor.update');
+Route::delete('teacher/{id}', [TeacherController::class, 'destroy'])->name('profesor.destroy');

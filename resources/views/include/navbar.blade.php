@@ -40,6 +40,10 @@
                                 <a class="dropdown-item {{ request()->is('offer/*') ? 'active bg-success text-white' : '' }}"
                                     href="{{ route('oferta.index') }}">ofertas</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('profesor/*') ? 'active bg-success text-white' : '' }}"
+                                    href="{{ route('profesor.index') }}">instructores</a>
+                            </li>
                         </ul>
                         
                     </li>
