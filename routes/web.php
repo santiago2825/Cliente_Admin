@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprenticeController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\CourseController;
@@ -77,3 +78,11 @@ Route::get('program/{id}', [ProgramController::class, 'show'])->name('program.sh
 Route::get('program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit'); 
 Route::put('program/{id}', [ProgramController::class, 'update'])->name('program.update');
 Route::delete('program/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');
+//aprendices
+route::get('apprentice/list',[ApprenticeController::class,'index'])->name('apprentice.index');
+Route::get('apprentice/create', [ApprenticeController::class, 'create'])->name('apprentice.create');
+Route::post('apprentice/store', [ApprenticeController::class, 'store'])->name('apprentice.store');
+Route::get('apprentice/{id}', [ApprenticeController::class, 'show'])->name('apprentice.show');
+Route::get('apprentice/{id}/edit', [ApprenticeController::class, 'edit'])->name('apprentice.edit'); 
+Route::put('apprentice/{id}', [ApprenticeController::class, 'update'])->name('apprentice.update');
+Route::delete('apprentice/{id}', [ApprenticeController::class, 'destroy'])->name('apprentice.destroy');

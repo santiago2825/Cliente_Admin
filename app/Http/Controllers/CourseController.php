@@ -53,7 +53,7 @@ class CourseController extends Controller
     public function destroy($id)
     {
         $url = env('URL_SERVE_API');
-        Http::delete($url . '/courset/' . $id);
+        Http::delete($url . '/course/' . $id);
         return redirect()->route('course.index');
     }
 }
