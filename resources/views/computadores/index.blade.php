@@ -11,9 +11,9 @@
                     Administra los computadores registrados en el sistema.
                 </p>
             </div>
-            {{-- <a href="{{ route('computer.create') }}" class="btn btn-success rounded-pill px-4 shadow-sm fw-semibold"> 
+            <a href="{{ route('computer.create') }}" class="btn btn-success rounded-pill px-4 shadow-sm fw-semibold"> 
                 <i class="fas fa-plus me-1"></i> Nuevo Computador
-            {{-- </a> --}}
+            </a>
         </div>
         <!-- Tabla -->
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
@@ -25,7 +25,7 @@
                             <th class="text-start py-3">Número</th>
                             <th class="text-start py-3">Marca</th>
                             <th class="text-start py-3">Ambiente</th>
-                            {{-- <th class="py-3 sticky-actions col-acciones">Acciones</th> --}}
+                            <th class="py-3 sticky-actions col-acciones">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,21 +35,21 @@
                                 <td class="fw-semibold text-dark text-start">
                                     {{ $computer['number'] }}
                                 </td>
-                                <td class="text-secondary text-start">{{ $computer->['brand'] }}</td>
+                                <td class="text-secondary text-start">{{ $computer['brand'] }}</td>
                                 <td class="text-secondary text-start">{{ $computer['environment']['name'] ?? 'No asignado' }}</td>
                                 <td class="text-center sticky-actions col-acciones">
-                                    {{-- <div class="d-flex justify-content-center gap-2"> 
-                                        <a href="{{ route('computer.show', $computer->id) }}"
+                                    <div class="d-flex justify-content-center gap-2"> 
+                                        <a href="{{ route('computer.show', $computer['id']) }}"
                                             class="btn btn-sm btn-outline-primary rounded-circle action-btn"
                                             title="Ver detalle">
                                             <i class="fas fa-eye"></i>
                                         </a>
-                                        <a href="{{ route('computer.edit', $computer->id) }}"
+                                        <a href="{{ route('computer.edit', $computer['id']) }}" 
                                             class="btn btn-sm btn-outline-warning rounded-circle action-btn"
                                             title="Editar">
                                             <i class="fas fa-pen"></i>
                                         </a>
-                                        <form action="{{ route('computer.destroy', $computer->id) }}" method="POST" class="d-inline">
+                                        <form action="{{ route('computer.destroy', $computer['id']) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle action-btn"
@@ -57,8 +57,8 @@
                                                 title="Eliminar">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                        </form>
-                                    {{-- </div> --}}
+                                        </form> 
+                                    </div> 
                                 </td>
                             </tr>
                         @endforeach

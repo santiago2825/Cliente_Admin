@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\EnvironmentController;
 use App\Http\Controllers\TrainingCenterController;
 use Illuminate\Support\Facades\Route;
@@ -32,3 +33,11 @@ Route::get('environment/{id}', [EnvironmentController::class, 'show'])->name('am
 Route::get('environment/{id}/edit', [EnvironmentController::class, 'edit'])->name('ambientes.edit'); 
 Route::put('environment/{id}', [EnvironmentController::class, 'update'])->name('ambientes.update');
 Route::delete('environment/{id}', [EnvironmentController::class, 'destroy'])->name('ambientes.destroy'); 
+//computadores
+route::get('computer/list',[ComputerController::class,'index'])->name('computer.index');
+Route::get('computer/create', [ComputerController::class, 'create'])->name('computer.create');
+Route::post('computer/store', [ComputerController::class, 'store'])->name('computer.store');
+Route::get('computer/{id}', [ComputerController::class, 'show'])->name('computer.show');
+Route::get('computer/{id}/edit', [ComputerController::class, 'edit'])->name('computer.edit'); 
+Route::put('computer/{id}', [ComputerController::class, 'update'])->name('computer.update');
+Route::delete('computer/{id}', [ComputerController::class, 'destroy'])->name('computer.destroy');

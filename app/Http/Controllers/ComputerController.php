@@ -14,13 +14,13 @@ class ComputerController extends Controller
     public function index(){
         $url = env('URL_SERVE_API');
         $computers = $this->fecthDataFromApi($url.'/computer');
-        return view('computer.index',compact('computers'));
+        return view('computadores.index',compact('computers'));
     }
     public function create()
     {
         $url = env('URL_SERVE_API');
-        $environment = Http::get($url .'/environment')->json();
-        return view('computer.create',compact('environment'));
+        $environments = Http::get($url .'/environment')->json();
+        return view('computadores.create',compact('environments'));
     }
     public function store(Request $request)
     {
@@ -32,14 +32,14 @@ class ComputerController extends Controller
     {
         $url = env('URL_SERVE_API');
         $computer = $this->fecthDataFromApi($url . '/computer/' . $id);
-        return view('computer.show', compact('computer'));
+        return view('computadores.show', compact('computer'));
     }
     public function edit($id)
     {
         $url = env('URL_SERVE_API');
         $computer = $this->fecthDataFromApi($url . '/computer/' . $id);
-        $environment = Http::get($url .'/environment')->json();
-        return view('computer.edit', compact('computer','environment'));
+        $environments = Http::get($url .'/environment')->json();
+        return view('computadores.edit', compact('computer','environments'));
     }
 
     public function update(Request $request, $id)
