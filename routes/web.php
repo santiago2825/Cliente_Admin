@@ -3,6 +3,7 @@
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\EnvironmentController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\TrainingCenterController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,11 @@ Route::get('computer/{id}', [ComputerController::class, 'show'])->name('computer
 Route::get('computer/{id}/edit', [ComputerController::class, 'edit'])->name('computer.edit'); 
 Route::put('computer/{id}', [ComputerController::class, 'update'])->name('computer.update');
 Route::delete('computer/{id}', [ComputerController::class, 'destroy'])->name('computer.destroy');
+//ofertas
+route::get('offer/list',[OfferController::class,'index'])->name('oferta.index');
+Route::get('offer/create', [OfferController::class, 'create'])->name('oferta.create');
+Route::post('offer/store', [OfferController::class, 'store'])->name('oferta.store');
+Route::get('offer/{id}', [OfferController::class, 'show'])->name('oferta.show');
+Route::get('offer/{id}/edit', [OfferController::class, 'edit'])->name('oferta.edit'); 
+Route::put('offer/{id}', [OfferController::class, 'update'])->name('oferta.update');
+Route::delete('offer/{id}', [OfferController::class, 'destroy'])->name('oferta.destroy');

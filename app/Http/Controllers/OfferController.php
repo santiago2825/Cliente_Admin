@@ -14,39 +14,39 @@ class OfferController extends Controller
     public function index(){
         $url = env('URL_SERVE_API');
         $offers = $this->fecthDataFromApi($url.'/offer');
-        return view('offers.index',compact('offers'));
+        return view('ofertas.index',compact('offers'));
     }
     public function create(){
-        return view ('offers.create');
+        return view ('ofertas.create');
     }
     public function store(Request $request)
     {
         $url = env('URL_SERVE_API');
         Http::post($url . '/offer', $request->all());
-        return redirect()->route('offers.index');
+        return redirect()->route('oferta.index');
     }
     public function show($id)
     {
         $url = env('URL_SERVE_API');
         $offer = $this->fecthDataFromApi($url.'/offer/'. $id);
-        return view('offers.show', compact('offer'));
+        return view('ofertas.show', compact('offer'));
     }
     public function edit($id)
     {
         $url = env('URL_SERVE_API');
         $offer = $this->fecthDataFromApi($url . '/offer/' . $id);
-        return view('offers.edit', compact('offer'));
+        return view('ofertas.edit', compact('offer'));
     }
     public function update(Request $request, $id)
     {
         $url = env('URL_SERVE_API');
         Http::put($url . '/offer/' . $id, $request->all());
-        return redirect()->route('offers.index');
+        return redirect()->route('oferta.index');
     }
     public function destroy($id)
     {
         $url = env('URL_SERVE_API');
         Http::delete($url . '/offer/' . $id);
-        return redirect()->route('offers.index');
+        return redirect()->route('oferta.index');
     }
 }

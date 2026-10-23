@@ -36,6 +36,10 @@
                                 <a class="dropdown-item {{ request()->is('computer/*') ? 'active bg-success text-white' : '' }}"
                                     href="{{ route('computer.index') }}">computador</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('offer/*') ? 'active bg-success text-white' : '' }}"
+                                    href="{{ route('oferta.index') }}">ofertas</a>
+                            </li>
                         </ul>
                         
                     </li>
