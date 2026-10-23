@@ -62,13 +62,13 @@ Route::get('teacher/{id}/edit', [TeacherController::class, 'edit'])->name('profe
 Route::put('teacher/{id}', [TeacherController::class, 'update'])->name('profesor.update');
 Route::delete('teacher/{id}', [TeacherController::class, 'destroy'])->name('profesor.destroy');
 //cursos
-route::get('course/list',[CourseController::class,'index'])->name('cursos.index');
-Route::get('course/create', [CourseController::class, 'create'])->name('cursos.create');
-Route::post('course/store', [CourseController::class, 'store'])->name('cursos.store');
-Route::get('course/{id}', [CourseController::class, 'show'])->name('cursos.show');
-Route::get('course/{id}/edit', [CourseController::class, 'edit'])->name('cursos.edit'); 
-Route::put('course/{id}', [CourseController::class, 'update'])->name('cursos.update');
-Route::delete('course/{id}', [CourseController::class, 'destroy'])->name('cursos.destroy');
+route::get('course/list',[CourseController::class,'index'])->name('course.index');
+Route::get('course/create', [CourseController::class, 'create'])->name('course.create');
+Route::post('course/store', [CourseController::class, 'store'])->name('course.store');
+Route::get('course/{id}', [CourseController::class, 'show'])->name('course.show');
+Route::get('course/{id}/edit', [CourseController::class, 'edit'])->name('course.edit'); 
+Route::put('course/{id}', [CourseController::class, 'update'])->name('course.update');
+Route::delete('course/{id}', [CourseController::class, 'destroy'])->name('course.destroy');
 //programa
 route::get('program/list',[ProgramController::class,'index'])->name('program.index');
 Route::get('program/create', [ProgramController::class, 'create'])->name('program.create');

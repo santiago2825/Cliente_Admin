@@ -48,6 +48,10 @@
                                 <a class="dropdown-item {{ request()->is('program/*') ? 'active bg-success text-white' : '' }}"
                                     href="{{ route('program.index') }}">programa</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('course/*') ? 'active bg-success text-white' : '' }}"
+                                    href="{{ route('course.index') }}">cursos</a>
+                            </li>
                         </ul>
                         
                     </li>
