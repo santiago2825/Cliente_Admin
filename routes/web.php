@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ComputerController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnvironmentController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TrainingCenterController;
 use Illuminate\Support\Facades\Route;
@@ -59,3 +61,19 @@ Route::get('teacher/{id}', [TeacherController::class, 'show'])->name('profesor.s
 Route::get('teacher/{id}/edit', [TeacherController::class, 'edit'])->name('profesor.edit'); 
 Route::put('teacher/{id}', [TeacherController::class, 'update'])->name('profesor.update');
 Route::delete('teacher/{id}', [TeacherController::class, 'destroy'])->name('profesor.destroy');
+//cursos
+route::get('course/list',[CourseController::class,'index'])->name('cursos.index');
+Route::get('course/create', [CourseController::class, 'create'])->name('cursos.create');
+Route::post('course/store', [CourseController::class, 'store'])->name('cursos.store');
+Route::get('course/{id}', [CourseController::class, 'show'])->name('cursos.show');
+Route::get('course/{id}/edit', [CourseController::class, 'edit'])->name('cursos.edit'); 
+Route::put('course/{id}', [CourseController::class, 'update'])->name('cursos.update');
+Route::delete('course/{id}', [CourseController::class, 'destroy'])->name('cursos.destroy');
+//programa
+route::get('program/list',[ProgramController::class,'index'])->name('program.index');
+Route::get('program/create', [ProgramController::class, 'create'])->name('program.create');
+Route::post('program/store', [ProgramController::class, 'store'])->name('program.store');
+Route::get('program/{id}', [ProgramController::class, 'show'])->name('program.show');
+Route::get('program/{id}/edit', [ProgramController::class, 'edit'])->name('program.edit'); 
+Route::put('program/{id}', [ProgramController::class, 'update'])->name('program.update');
+Route::delete('program/{id}', [ProgramController::class, 'destroy'])->name('program.destroy');

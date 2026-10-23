@@ -44,6 +44,10 @@
                                 <a class="dropdown-item {{ request()->is('profesor/*') ? 'active bg-success text-white' : '' }}"
                                     href="{{ route('profesor.index') }}">instructores</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item {{ request()->is('program/*') ? 'active bg-success text-white' : '' }}"
+                                    href="{{ route('program.index') }}">programa</a>
+                            </li>
                         </ul>
                         
                     </li>
