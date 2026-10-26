@@ -38,7 +38,7 @@
                                     <span
                                         class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fs-6">
                                         <i class="fas fa-building me-1"></i>
-                                        {{ $ambiente['training_center_id'] }}
+                                        {{ $ambiente['training_center'] ['name']}}
                                     </span>
                                 </div>
                             </div>

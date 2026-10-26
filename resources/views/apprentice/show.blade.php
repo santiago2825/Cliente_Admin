@@ -45,7 +45,7 @@
                     <input
                         type="text"
                         class="form-control"
-                        value="{{ $apprentice['course']['course_number'] ?? 'No asignado' }}"
+                        value="{{ $apprentice['course']['course_number'] }}"
                         readonly>
                 </div>
                 <div class="text-center mt-4">
