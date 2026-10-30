@@ -14,6 +14,16 @@
 
                 <div class="card-body p-4">
 
+                    @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form action="{{ route('computer.store') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
@@ -27,6 +37,7 @@
                                 type="number"
                                 name="number"
                                 class="form-control"
+                                value="{{ old('number') }}"
                                 placeholder="Ingrese el número del computador"
                                 required>
                         </div>
@@ -39,6 +50,7 @@
                                     type="text"
                                     name="brand"
                                     class="form-control"
+                                    value="{{ old('brand') }}"
                                     placeholder="Ingrese la marca"
                                     required>
                             </div>
@@ -50,7 +62,7 @@
                                 <select name="environment_id" class="form-control" required>
                                     <option value="">Seleccione un ambiente</option>
                                     @foreach ($environments as $environment)
-                                        <option value="{{ $environment['id'] }}">
+                                        <option value="{{ $environment['id'] }}" {{ old('environment_id') == $environment['id'] ? 'selected' : '' }}>
                                             {{ $environment['name'] }}
                                         </option>
                                     @endforeach

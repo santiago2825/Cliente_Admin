@@ -15,6 +15,11 @@
                 <i class="fas fa-plus me-1"></i> Nuevo Computador
             </a>
         </div>
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <!-- Tabla -->
         <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
             <div class="table-responsive">
