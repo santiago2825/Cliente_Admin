@@ -27,6 +27,7 @@
                     <thead class="table-dark text-center">
                         <tr>
                             <th class="py-3">ID</th>
+                            <th class="text-start py-3">imagen</th>
                             <th class="text-start py-3">Número</th>
                             <th class="text-start py-3">Marca</th>
                             <th class="text-start py-3">Ambiente</th>
@@ -37,6 +38,8 @@
                         @foreach ($computers as $computer)
                             <tr>
                                 <td class="text-center text-muted fw-bold">{{ $computer['id'] }}</td>
+                                <td><img src="{{ $computer['imagen_url'] }}" alt="{{ $computer['brand'] }}" width="100">
+                        </td>
                                 <td class="fw-semibold text-dark text-start">
                                     {{ $computer['number'] }}
                                 </td>

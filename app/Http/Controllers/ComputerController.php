@@ -25,7 +25,17 @@ class ComputerController extends Controller
     public function store(Request $request)
     {
         $url = env('URL_SERVE_API');
-        Http::post($url . '/computer', $request->all());
+        $file = $request->file('imagen');
+        $response = Http::attach(
+            'imagen',
+            file_get_contents($file->getRealPath()),
+            $file->getClientOriginalName()
+        )->post($url . '/computer', [
+            'number' => $request->number,
+            'brand' => $request->brand,
+            'environment_id' => $request->environment_id,
+        ]);
+
         return redirect()->route('computer.index');
     }
     public function show($id)

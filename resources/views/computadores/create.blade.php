@@ -57,6 +57,19 @@
 
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">
+                                    imagen
+                                </label>
+                                <input
+                                    type="file"
+                                    name="imagen"
+                                    class="form-control"
+                                    accept="image/*"
+                                    placeholder="Ingrese la marca"
+                                    required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
                                     Ambientes
                                 </label>
                                 <select name="environment_id" class="form-control" required>
