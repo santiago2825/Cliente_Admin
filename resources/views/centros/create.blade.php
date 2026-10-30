@@ -35,6 +35,19 @@
                                 required>
                         </div>
 
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                imagen
+                            </label>
+                            <input
+                                type="file"
+                                name="imagen"
+                                accept="image/*"
+                                class="form-control"
+                                placeholder="ingrese su imagen"
+                                required>
+                        </div>
+
                         <div class="d-flex justify-content-between">
                             <a href="{{ route('centros.index') }}"
                                 class="btn btn-secondary rounded-pill px-4">

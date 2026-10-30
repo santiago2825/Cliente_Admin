@@ -23,6 +23,7 @@
                 <thead class="table-dark text-center">
                     <tr>
                         <th class="py-3">ID</th>
+                        <th class="text-start py-3">imagen</th>
                         <th class="text-start py-3">Nombre</th>
                         <th class="text-start py-3">Dirección</th>
                         <th class="py-3 sticky-actions col-acciones">Acciones</th>
@@ -32,6 +33,8 @@
                     @foreach($trainingcenters as $trainingcenter)
                     <tr>
                         <td class="text-center text-muted fw-bold">{{ $trainingcenter['id'] }}</td>
+                        <td><img src="{{ $trainingcenter['imagen_url'] }}" alt="{{ $trainingcenter['name'] }}" width="100">
+                        </td>
                         <td class="fw-semibold text-dark text-start">
                             {{ $trainingcenter['name'] }}
                         </td>

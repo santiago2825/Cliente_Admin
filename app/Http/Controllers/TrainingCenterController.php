@@ -21,9 +21,17 @@ class TrainingCenterController extends Controller
     }
     public function store(Request $request)
     {
-        $url = env('URL_SERVE_API');
-        Http::post($url . '/training_center', $request->all());
-        return redirect()->route('centros.index');
+    $url = env('URL_SERVE_API');
+    $file = $request->file('imagen');
+    $response = Http::attach(
+        'imagen', 
+        file_get_contents($file->getRealPath()), 
+        $file->getClientOriginalName()
+    )->post($url . '/training_center', [
+        'name' => $request->name,
+        'location' => $request->location
+    ]);
+    return redirect()->route('centros.index',compact('response'));
     }
     public function show($id)
     {
